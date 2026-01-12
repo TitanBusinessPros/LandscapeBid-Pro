@@ -6,13 +6,16 @@
     <title>LandscapeBid Pro - Connect with Professional Landscapers</title>
     <meta name="description" content="Get multiple bids from professional landscapers for your outdoor projects. Easy, secure, and efficient landscape contractor matching."/>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/LandscapeBid-Pro/raw/main/LBP-Logo-T.png">
+    
     <!-- Open Graph Tags -->
     <meta property="og:title" content="LandscapeBid Pro - Connect with Professional Landscapers"/>
     <meta property="og:description" content="Get multiple bids from professional landscapers for your outdoor projects. Easy, secure, and efficient landscape contractor matching."/>
     <meta property="og:url" content="https://www.landscapebidpro.com"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="LandscapeBid Pro"/>
-    <meta property="og:image" content="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&amp;h=630&amp;fit=crop&amp;crop=center"/>
+    <meta property="og:image" content="https://github.com/TitanBusinessPros/LandscapeBid-Pro/raw/main/LBP-Logo-T.png"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     
@@ -20,12 +23,139 @@
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="LandscapeBid Pro - Connect with Professional Landscapers"/>
     <meta name="twitter:description" content="Get multiple bids from professional landscapers for your outdoor projects. Easy, secure, and efficient landscape contractor matching."/>
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&amp;h=630&amp;fit=crop&amp;crop=center"/>
+    <meta name="twitter:image" content="https://github.com/TitanBusinessPros/LandscapeBid-Pro/raw/main/LBP-Logo-T.png"/>
     <meta name="twitter:url" content="https://www.landscapebidpro.com"/>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    
+    <style>
+        /* Floating animation for logo */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                filter: drop-shadow(0 5px 15px rgba(46, 125, 50, 0.3));
+            }
+            50% {
+                transform: translateY(-10px) rotate(1deg);
+                filter: drop-shadow(0 15px 25px rgba(46, 125, 50, 0.5)) 
+                        drop-shadow(0 0 10px rgba(46, 125, 50, 0.3));
+            }
+        }
+        
+        /* Digital glow effect */
+        @keyframes digitalGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 5px rgba(46, 125, 50, 0.7)) 
+                        drop-shadow(0 0 10px rgba(46, 125, 50, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 10px rgba(46, 125, 50, 0.9)) 
+                        drop-shadow(0 0 20px rgba(46, 125, 50, 0.6))
+                        drop-shadow(0 0 30px rgba(46, 125, 50, 0.3));
+            }
+        }
+        
+        /* Background styling - FIXED */
+        body {
+            background: linear-gradient(to bottom, rgba(15, 32, 15, 0.85), rgba(15, 32, 15, 0.75)),
+                        url('https://github.com/TitanBusinessPros/LandscapeBid-Pro/raw/main/LBP-BG-1.png') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            background-position: center;
+        }
+        
+        /* Game styles */
+        .game-cell {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #2d7d2d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 24px;
+            user-select: none;
+        }
+        
+        .game-cell:hover {
+            transform: scale(1.05);
+            background: rgba(46, 125, 50, 0.2);
+        }
+        
+        .game-cell.selected {
+            background: rgba(46, 125, 50, 0.4);
+            border-color: #b8954f;
+            box-shadow: 0 0 10px #b8954f;
+        }
+        
+        .game-cell.matched {
+            animation: matchAnimation 0.5s ease;
+        }
+        
+        @keyframes matchAnimation {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            gap: 2px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .game-grid {
+                grid-template-columns: repeat(6, 40px);
+            }
+            
+            .game-cell {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            #logo {
+                height: 32px;
+                max-width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .game-grid {
+                grid-template-columns: repeat(5, 35px);
+            }
+            
+            .game-cell {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+        
+        /* Content background for readability */
+        .content-bg {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(5px);
+        }
+        
+        footer {
+            background: rgba(15, 32, 15, 0.95);
+        }
+    </style>
     
     <script>
         tailwind.config = {
@@ -65,19 +195,31 @@
         }
     </script>
 </head>
-<body class="font-sans bg-gradient-to-br from-forest-50 to-earth-50 min-h-screen">
+<body class="font-sans min-h-screen">
+    <!-- Large Centered Logo -->
+    <div class="w-full bg-white/95 backdrop-blur-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center">
+                <img 
+                    id="logo" 
+                    src="https://github.com/TitanBusinessPros/LandscapeBid-Pro/raw/main/LBP-Logo-T.png" 
+                    alt="LandscapeBid Pro Logo"
+                    class="h-48 w-auto transform hover:scale-105 transition-transform duration-300"
+                    style="animation: float 3s ease-in-out infinite, digitalGlow 2s ease-in-out infinite;"
+                />
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-seedling text-forest-600 text-2xl"></i>
-                    <span class="text-2xl font-bold text-gray-900">LandscapeBid Pro</span>
-                </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#how-it-works" class="text-gray-700 hover:text-forest-600 transition-colors font-medium">How It Works</a>
                     <a href="#services" class="text-gray-700 hover:text-forest-600 transition-colors font-medium">Services</a>
                     <a href="#benefits" class="text-gray-700 hover:text-forest-600 transition-colors font-medium">Benefits</a>
+                    <a href="#game" class="text-gray-700 hover:text-forest-600 transition-colors font-medium">Game</a>
                     <a href="tel:405-998-7979" class="text-forest-600 hover:text-forest-700 transition-colors font-bold text-lg">
                         <i class="fas fa-phone mr-1"></i>405-998-7979
                     </a>
@@ -85,15 +227,31 @@
                         <i class="fas fa-briefcase mr-2"></i>Join as Pro
                     </button>
                 </div>
-                <button class="md:hidden text-gray-700">
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="md:hidden bg-white shadow-lg hidden">
+        <div class="px-4 py-4 space-y-4">
+            <a href="#how-it-works" class="block text-gray-700 hover:text-forest-600 transition-colors font-medium">How It Works</a>
+            <a href="#services" class="block text-gray-700 hover:text-forest-600 transition-colors font-medium">Services</a>
+            <a href="#benefits" class="block text-gray-700 hover:text-forest-600 transition-colors font-medium">Benefits</a>
+            <a href="#game" class="block text-gray-700 hover:text-forest-600 transition-colors font-medium">Game</a>
+            <a href="tel:405-998-7979" class="block text-forest-600 hover:text-forest-700 transition-colors font-bold text-lg">
+                <i class="fas fa-phone mr-1"></i>405-998-7979
+            </a>
+            <button onclick="showCustomerForm()" class="w-full bg-earth-500 text-white px-6 py-2 rounded-full hover:bg-earth-600 transition-colors font-medium">
+                <i class="fas fa-briefcase mr-2"></i>Join as Pro
+            </button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden content-bg">
         <!-- Background Elements -->
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-10 w-64 h-64 bg-forest-300 rounded-full blur-3xl"></div>
@@ -154,7 +312,7 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-white">
+    <section id="how-it-works" class="py-20 content-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
@@ -229,7 +387,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gradient-to-br from-forest-50 to-earth-50">
+    <section id="services" class="py-20 bg-gradient-to-br from-forest-50 to-earth-50 content-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Landscape Services We Cover</h2>
@@ -399,7 +557,7 @@
     </section>
 
     <!-- Benefits Section -->
-    <section id="benefits" class="py-20 bg-white">
+    <section id="benefits" class="py-20 content-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose LandscapeBid Pro?</h2>
@@ -480,6 +638,88 @@
         </div>
     </section>
 
+    <!-- Match-3 Game Section -->
+    <section id="game" class="py-20 content-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Landscape Match-3 Game</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+                    Match 3 landscape tools to earn points! Get to 20,000 points to win. Each match gives you 100 points.
+                </p>
+                
+                <!-- Game Stats -->
+                <div class="flex justify-center space-x-8 mb-8">
+                    <div class="text-center bg-forest-100 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-forest-600" id="score">0</div>
+                        <div class="text-sm text-gray-600">Current Score</div>
+                    </div>
+                    <div class="text-center bg-earth-100 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-earth-600" id="target">20,000</div>
+                        <div class="text-sm text-gray-600">Target Score</div>
+                    </div>
+                    <div class="text-center bg-forest-100 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-forest-600" id="moves">0</div>
+                        <div class="text-sm text-gray-600">Moves Made</div>
+                    </div>
+                </div>
+                
+                <!-- Game Controls -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button onclick="startNewGame()" class="bg-forest-600 text-white px-6 py-3 rounded-lg hover:bg-forest-700 transition-colors">
+                        <i class="fas fa-play mr-2"></i>New Game
+                    </button>
+                    <button onclick="resetCurrentGame()" class="bg-earth-600 text-white px-6 py-3 rounded-lg hover:bg-earth-700 transition-colors">
+                        <i class="fas fa-redo mr-2"></i>Reset Game
+                    </button>
+                </div>
+                
+                <!-- Game Instructions -->
+                <div class="bg-gray-50 p-4 rounded-lg mb-8 max-w-2xl mx-auto">
+                    <h3 class="font-bold text-gray-900 mb-2">How to Play:</h3>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• Click on a tool to select it</li>
+                        <li>• Click on an adjacent tool to swap positions</li>
+                        <li>• Match 3 or more of the same tool to score points</li>
+                        <li>• Each match gives you 100 points</li>
+                        <li>• Reach 20,000 points to win!</li>
+                    </ul>
+                </div>
+                
+                <!-- Game Grid -->
+                <div class="flex justify-center mb-8">
+                    <div id="gameGrid" class="game-grid mb-4"></div>
+                </div>
+                
+                <!-- Game Icons Legend -->
+                <div class="flex justify-center space-x-6 mb-8">
+                    <div class="flex items-center space-x-2">
+                        <div class="game-cell"><span>🚜</span></div>
+                        <span class="text-sm text-gray-600">Mower</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="game-cell"><span>🍃</span></div>
+                        <span class="text-sm text-gray-600">Blower</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="game-cell"><span>🔧</span></div>
+                        <span class="text-sm text-gray-600">Wrench</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="game-cell"><span>✂️</span></div>
+                        <span class="text-sm text-gray-600">Trimmer</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="game-cell"><span>🪓</span></div>
+                        <span class="text-sm text-gray-600">Axe</span>
+                    </div>
+                </div>
+                
+                <!-- Game Status -->
+                <div id="gameStatus" class="text-xl font-semibold text-forest-600 min-h-8"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Customer Form Modal -->
     <div id="customerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-2xl w-full max-h-screen overflow-y-auto">
@@ -491,8 +731,8 @@
                     </button>
                 </div>
                 
-                <!-- FormSubmit form -->
-                <form id="customerForm" action="https://formsubmit.co/titanbusinesspros@gmail.com" method="POST" enctype="multipart/form-data">
+                <!-- FormSubmit form - FILE UPLOAD REMOVED, REDIRECT TO OKIEWEBSITEGUY.COM -->
+                <form id="customerForm" action="https://formsubmit.co/titanbusinesspros@gmail.com" method="POST">
                     <!-- FormSubmit redirect to okiewebsiteguy.com -->
                     <input type="hidden" name="_next" value="https://www.okiewebsiteguy.com">
                     <input type="hidden" name="_subject" value="New Landscape Project Submission - LandscapeBid Pro">
@@ -625,13 +865,6 @@
                                 </select>
                             </div>
                         </div>
-
-                        <!-- File Upload -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Project Images (Optional)</label>
-                            <p class="text-xs text-gray-500 mb-3">Upload photos to help contractors understand your project better. Max 5 files, 10MB each.</p>
-                            <input type="file" name="files[]" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-forest-500 focus:border-forest-500 transition-colors"/>
-                        </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Project Description *</label>
@@ -734,8 +967,282 @@
     </footer>
 
     <script>
+        // Game variables - SIMPLIFIED AND WORKING VERSION
+        let gameGrid = [];
+        let selectedCell = null;
+        let score = 0;
+        let moves = 0;
+        const TARGET_SCORE = 20000;
+        const GRID_SIZE = 8;
+        const TOOLS = ['🚜', '🍃', '🔧', '✂️', '🪓']; // Simple, working emojis
+        
+        // Initialize game
+        function initGame() {
+            // Clear existing game
+            gameGrid = [];
+            selectedCell = null;
+            
+            // Create new grid with random tools
+            for (let i = 0; i < GRID_SIZE; i++) {
+                gameGrid[i] = [];
+                for (let j = 0; j < GRID_SIZE; j++) {
+                    gameGrid[i][j] = TOOLS[Math.floor(Math.random() * TOOLS.length)];
+                }
+            }
+            
+            renderGame();
+        }
+        
+        // Render game grid
+        function renderGame() {
+            const gridContainer = document.getElementById('gameGrid');
+            gridContainer.innerHTML = '';
+            
+            for (let i = 0; i < GRID_SIZE; i++) {
+                for (let j = 0; j < GRID_SIZE; j++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'game-cell';
+                    cell.dataset.row = i;
+                    cell.dataset.col = j;
+                    cell.innerHTML = `<span>${gameGrid[i][j]}</span>`;
+                    
+                    // Add click event
+                    cell.addEventListener('click', () => handleCellClick(i, j));
+                    
+                    gridContainer.appendChild(cell);
+                }
+            }
+            
+            updateGameStats();
+        }
+        
+        // Handle cell click
+        function handleCellClick(row, col) {
+            // If no cell is selected, select this one
+            if (selectedCell === null) {
+                selectedCell = { row, col };
+                highlightCell(row, col, true);
+                return;
+            }
+            
+            // If same cell is clicked again, deselect it
+            if (selectedCell.row === row && selectedCell.col === col) {
+                highlightCell(row, col, false);
+                selectedCell = null;
+                return;
+            }
+            
+            // Check if cells are adjacent
+            const isAdjacent = 
+                (Math.abs(selectedCell.row - row) === 1 && selectedCell.col === col) ||
+                (Math.abs(selectedCell.col - col) === 1 && selectedCell.row === row);
+            
+            if (!isAdjacent) {
+                // Not adjacent, change selection
+                highlightCell(selectedCell.row, selectedCell.col, false);
+                selectedCell = { row, col };
+                highlightCell(row, col, true);
+                return;
+            }
+            
+            // Swap cells
+            swapCells(selectedCell.row, selectedCell.col, row, col);
+            
+            // Check for matches
+            const matches = findMatches();
+            
+            if (matches.length > 0) {
+                // Valid move - process matches
+                moves++;
+                processMatches(matches);
+                
+                // Remove highlights
+                highlightCell(selectedCell.row, selectedCell.col, false);
+                highlightCell(row, col, false);
+                selectedCell = null;
+                
+                // Check for win
+                if (score >= TARGET_SCORE) {
+                    document.getElementById('gameStatus').textContent = '🎉 Congratulations! You reached 20,000 points! 🎉';
+                    document.getElementById('gameStatus').className = 'text-xl font-semibold text-green-600';
+                }
+            } else {
+                // No matches - swap back
+                swapCells(selectedCell.row, selectedCell.col, row, col);
+                renderGame();
+                highlightCell(selectedCell.row, selectedCell.col, true);
+                document.getElementById('gameStatus').textContent = 'No match found. Try again!';
+                document.getElementById('gameStatus').className = 'text-xl font-semibold text-red-600';
+                setTimeout(() => {
+                    document.getElementById('gameStatus').textContent = '';
+                }, 2000);
+            }
+        }
+        
+        // Swap two cells
+        function swapCells(row1, col1, row2, col2) {
+            const temp = gameGrid[row1][col1];
+            gameGrid[row1][col1] = gameGrid[row2][col2];
+            gameGrid[row2][col2] = temp;
+        }
+        
+        // Highlight a cell
+        function highlightCell(row, col, highlight) {
+            const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+            if (cell) {
+                if (highlight) {
+                    cell.classList.add('selected');
+                } else {
+                    cell.classList.remove('selected');
+                }
+            }
+        }
+        
+        // Find all matches
+        function findMatches() {
+            const matches = [];
+            
+            // Check horizontal matches
+            for (let i = 0; i < GRID_SIZE; i++) {
+                for (let j = 0; j < GRID_SIZE - 2; j++) {
+                    if (gameGrid[i][j] === gameGrid[i][j + 1] && gameGrid[i][j] === gameGrid[i][j + 2]) {
+                        // Found a match of 3
+                        const match = [];
+                        match.push({row: i, col: j});
+                        match.push({row: i, col: j + 1});
+                        match.push({row: i, col: j + 2});
+                        
+                        // Check for longer matches
+                        let k = j + 3;
+                        while (k < GRID_SIZE && gameGrid[i][j] === gameGrid[i][k]) {
+                            match.push({row: i, col: k});
+                            k++;
+                        }
+                        
+                        matches.push(match);
+                    }
+                }
+            }
+            
+            // Check vertical matches
+            for (let i = 0; i < GRID_SIZE - 2; i++) {
+                for (let j = 0; j < GRID_SIZE; j++) {
+                    if (gameGrid[i][j] === gameGrid[i + 1][j] && gameGrid[i][j] === gameGrid[i + 2][j]) {
+                        // Found a match of 3
+                        const match = [];
+                        match.push({row: i, col: j});
+                        match.push({row: i + 1, col: j});
+                        match.push({row: i + 2, col: j});
+                        
+                        // Check for longer matches
+                        let k = i + 3;
+                        while (k < GRID_SIZE && gameGrid[i][j] === gameGrid[k][j]) {
+                            match.push({row: k, col: j});
+                            k++;
+                        }
+                        
+                        matches.push(match);
+                    }
+                }
+            }
+            
+            return matches;
+        }
+        
+        // Process matches
+        function processMatches(matches) {
+            // Flatten matches and remove duplicates
+            const allMatchedCells = [];
+            const seen = new Set();
+            
+            matches.forEach(match => {
+                match.forEach(cell => {
+                    const key = `${cell.row},${cell.col}`;
+                    if (!seen.has(key)) {
+                        seen.add(key);
+                        allMatchedCells.push(cell);
+                    }
+                });
+            });
+            
+            // Update score
+            const points = allMatchedCells.length * 100;
+            score += points;
+            
+            // Update display
+            updateGameStats();
+            
+            // Show match animation
+            allMatchedCells.forEach(cell => {
+                const cellElement = document.querySelector(`[data-row="${cell.row}"][data-col="${cell.col}"]`);
+                if (cellElement) {
+                    cellElement.classList.add('matched');
+                }
+            });
+            
+            // Update status
+            document.getElementById('gameStatus').textContent = `Matched ${allMatchedCells.length} tools for ${points} points!`;
+            document.getElementById('gameStatus').className = 'text-xl font-semibold text-forest-600';
+            
+            // Replace matched cells with new random tools
+            setTimeout(() => {
+                allMatchedCells.forEach(cell => {
+                    gameGrid[cell.row][cell.col] = TOOLS[Math.floor(Math.random() * TOOLS.length)];
+                });
+                
+                renderGame();
+                
+                // Check for cascade matches
+                setTimeout(() => {
+                    const newMatches = findMatches();
+                    if (newMatches.length > 0) {
+                        processMatches(newMatches);
+                    } else {
+                        // Clear status after 2 seconds
+                        setTimeout(() => {
+                            document.getElementById('gameStatus').textContent = '';
+                        }, 2000);
+                    }
+                }, 500);
+            }, 500);
+        }
+        
+        // Update game stats
+        function updateGameStats() {
+            document.getElementById('score').textContent = score;
+            document.getElementById('moves').textContent = moves;
+        }
+        
+        // Start new game
+        function startNewGame() {
+            score = 0;
+            moves = 0;
+            selectedCell = null;
+            document.getElementById('gameStatus').textContent = '';
+            initGame();
+        }
+        
+        // Reset current game
+        function resetCurrentGame() {
+            score = 0;
+            moves = 0;
+            selectedCell = null;
+            document.getElementById('gameStatus').textContent = '';
+            initGame();
+        }
+        
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+        
         // Modal Functions
-        function showCustomerForm() {
+        window.showCustomerForm = function() {
             document.getElementById('customerModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             // Set min date to today
@@ -744,83 +1251,77 @@
             if (dateInput) {
                 dateInput.min = today;
             }
-        }
+        };
         
-        function hideCustomerForm() {
+        window.hideCustomerForm = function() {
             document.getElementById('customerModal').classList.add('hidden');
             document.body.style.overflow = 'auto';
-        }
+        };
+        
+        // Initialize game on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initGame();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            // Close modal when clicking outside
+            document.getElementById('customerModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    hideCustomerForm();
                 }
             });
-        });
 
-        // Close modal when clicking outside
-        document.getElementById('customerModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideCustomerForm();
-            }
-        });
+            // Navigation scroll effect
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('bg-white/95');
+                    nav.classList.remove('bg-white/90');
+                } else {
+                    nav.classList.add('bg-white/90');
+                    nav.classList.remove('bg-white/95');
+                }
+            });
 
-        // Navigation scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-white/95');
-                nav.classList.remove('bg-white/90');
-            } else {
-                nav.classList.add('bg-white/90');
-                nav.classList.remove('bg-white/95');
-            }
-        });
-
-        // Mobile menu toggle
-        document.querySelector('.md\\:hidden button').addEventListener('click', function() {
-            const navLinks = document.querySelector('.hidden.md\\:flex');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.classList.add('flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'p-4', 'shadow-lg', 'space-y-4');
-            }
-        });
-
-        // Form validation enhancement
-        document.getElementById('customerForm').addEventListener('submit', function(e) {
-            const serviceSelect = this.querySelector('select[name="service"]');
-            const description = this.querySelector('textarea[name="message"]');
-            
-            if (serviceSelect.value === '') {
-                e.preventDefault();
-                alert('Please select a service from the dropdown menu.');
-                serviceSelect.focus();
-                return;
-            }
-            
-            if (description.value.trim().length < 20) {
-                e.preventDefault();
-                alert('Please provide a more detailed project description (at least 20 characters).');
-                description.focus();
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Submitting...';
-            submitBtn.disabled = true;
-            
-            // Ensure redirect happens
-            console.log('Form submitting to FormSubmit, will redirect to www.okiewebsiteguy.com');
+            // Form validation enhancement
+            document.getElementById('customerForm').addEventListener('submit', function(e) {
+                const serviceSelect = this.querySelector('select[name="service"]');
+                const description = this.querySelector('textarea[name="message"]');
+                
+                if (serviceSelect.value === '') {
+                    e.preventDefault();
+                    alert('Please select a service from the dropdown menu.');
+                    serviceSelect.focus();
+                    return;
+                }
+                
+                if (description.value.trim().length < 20) {
+                    e.preventDefault();
+                    alert('Please provide a more detailed project description (at least 20 characters).');
+                    description.focus();
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Submitting...';
+                submitBtn.disabled = true;
+                
+                // Ensure redirect happens
+                console.log('Form submitting to FormSubmit, will redirect to www.okiewebsiteguy.com');
+            });
         });
     </script>
 </body>
